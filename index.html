@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度首页</title>
+	<style>
+		html{width:100%;height:100%;}
+		body{margin:0;font:14px "宋体";width:100%;height:100%;}
+		p{margin:0;}
+		a{color:#fff;}
+		img{border:none;}
+		input{border:1px solid #ccc;outline:none;padding:0;margin:0;}
+		.scBgColor{width:100%;min-height:100%;position:absolute;z-index:-10;left:0;top:0;background:url("images/scBgColor.jpg") center 0 no-repeat fixed;background-size:cover;-webkit-background-size:cover;-o-background-size:cover;zoom:1;}
+		/*header start*/
+		.scHeader{color:#fff;height:37px;line-height:37px;position:relative;zoom:1;}
+		.scHeader .headerBg{height:37px;width:100%;position:absolute;z-index:-1;background:#000;opacity:0.3;filter:alpha(opacity=30);top:0;left:0;}
+		.scHeader .h_left{float:left;}
+		.scHeader .h_right{float:right;}
+		.scHeader .h_wth{text-decoration:none;margin-left:13px;}
+		.scHeader .h_wth span{color:#badc00;}
+		.scHeader .h_txt{margin-right:23px;}
+		.h_right .h_txt{font-weight:bold;}
+		.h_right .h_user, .h_right .h_settings, .h_right .h_more{font-weight:normal;}
+		.h_right .h_more{background:#3388ff;display:inline-block;height:37px;padding:0 4px;text-decoration:none;}
+		/*header end*/
+		/*scContent start*/
+		.scContent{width:740px;margin:50px auto 0;text-align:center;zoom:1;}
+		.scContent .c_txt{width:589px;height:42px;text-indent:1em;font-size:14px;vertical-align:middle;line-height:42px;}
+		.scContent .c_find{width:113px;height:44px;display:inline-block;text-align:center;font-size:18px;color:#000;text-decoration: none;line-height:44px;background:#ebebeb linear-gradient(#f5f5f5, #ebebeb, #dfdfdf);vertical-align:middle;}
+		/*scContent end*/
+	</style>
+</head>
+<body>
+	<!-- bg start -->
+	<!-- 给当前div加一个定位，宽度和高度写成100%，并且使用背景图片的固定定位，以及background-size:cover -->
+	<!-- 就能实现等比例缩放的背景图片 -->
+	<div class="scBgColor"></div>
+	<!-- bg end -->
+	<!-- header start -->
+	<div class="scHeader">
+		<div class="headerBg"></div>
+		<p class="h_left">
+			<a href="javascript:void(0);" class="h_txt h_wth">济南： 13℃<span>良 83</span></a> | 
+			<a href="javascript:void(0);" class="h_txt">设置</a>
+			<a href="javascript:void(0);" class="h_txt">宝箱</a>
+			<a href="javascript:void(0);" class="h_txt">换肤</a>
+			<a href="javascript:void(0);" class="h_txt">消息</a>
+		</p>
+		<p class="h_right">
+			<a href="javascript:void(0);" class="h_txt">新闻</a>
+			<a href="javascript:void(0);" class="h_txt">hao123</a>
+			<a href="javascript:void(0);" class="h_txt">地图</a>
+			<a href="javascript:void(0);" class="h_txt">视频</a>
+			<a href="javascript:void(0);" class="h_txt">贴吧</a>
+			<a href="javascript:void(0);" class="h_txt h_user">会女神</a>
+			<a href="javascript:void(0);" class="h_txt h_settings">设置</a>
+			<a href="javascript:void(0);" class="h_txt h_more">更多产品</a>
+		</p>
+	</div>
+	<!-- header end -->
+	<div class="scContent">
+		<p><img src="images/logo.png" alt="百度一下" width="270" /></p>
+		<p><input type="text" id="c_txt" class="c_txt" /><a href="javascript:void(0);" id="btn" class="c_find">百度一下</a></p>
+	</div>
+	<script type="text/javascript">
+		window.onload = function () {
+			var oText = document.getElementById('c_txt');
+			var oBtn = document.getElementById('btn');
+			var temp = '';
+			
+			oBtn.onclick = function () {
+				temp = oText.value;
+				var str = 'https://www.baidu.com/s?wd=' +  temp+'&rsv_spt=1&rsv_iqid=0x84dd399e0018f7bc&issp=1&f=8&rsv_bp=0&rsv_idx=2&ie=utf-8&tn=baiduhome_pg&rsv_enter=1&rsv_sug3=6&rsv_sug1=1&rsv_sug2=0&inputT=1660&rsv_sug4=5814';
+
+				window.open(str);
+			};
+		};
+	</script>
+</body>
+</html>
